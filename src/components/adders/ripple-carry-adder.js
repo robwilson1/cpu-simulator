@@ -1,12 +1,13 @@
+import "../../util/types";
 import { defaultByte } from "../../util/defaults";
-import { halfAdder } from "./half";
-import { fullAdder } from "./full";
+import { halfAdder } from "./half-adder";
+import { fullAdder } from "./full-adder";
 
 /**
  * Given 2 bytes, returns the sum and the carry
- * @param {0b0 | 0b1[]} inputA - The first byte
- * @param {0b0 | 0b1[]} inputB - The second byte
- * @returns {{ sum: 0b0 | 0b1[], carry: 0b0 | 0b1 }} - If carry is 1, then overflow occured!
+ * @param {byte} inputA - The first byte
+ * @param {byte} inputB - The second byte
+ * @returns {{ sum: byte, carry: bit }} - If carry is 1, then overflow occured!
  */
 export function rippleCarryAdder(inputA = defaultByte, inputB = defaultByte) {
 	const [a0, a1, a2, a3, a4, a5, a6, a7] = inputA;

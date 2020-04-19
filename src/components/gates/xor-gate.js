@@ -1,12 +1,13 @@
-import { andGate } from "./and";
-import { orGate } from "./or";
-import { notGate } from "./not";
+import "../../util/types";
+import { andGate } from "./and-gate";
+import { orGate } from "./or-gate";
+import { notGate } from "./not-gate";
 
 /**
  * Given 2 bits, returns the XOR result
- * @param {0b0 | 0b1} inputA - A single bit
- * @param {0b0 | 0b1} inputB - A single bit
- * @returns {0b0 | 0b1}
+ * @param {bit} inputA - A single bit
+ * @param {bit} inputB - A single bit
+ * @returns {bit}
  */
 export function xorGate(inputA = 0b0, inputB = 0b0) {
 	// Note: Javascript has XOR built in with:

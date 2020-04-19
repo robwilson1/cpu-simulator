@@ -1,3 +1,3 @@
-export { fullAdder } from "./full";
-export { halfAdder } from "./half";
-export { rippleCarryAdder } from "./ripple-carry";
+export { fullAdder } from "./full-adder";
+export { halfAdder } from "./half-adder";
+export { rippleCarryAdder } from "./ripple-carry-adder";

@@ -1,7 +1,9 @@
+import "../../util/types";
+
 /**
  * Given a bit, returns the NOT result
- * @param {0b0 | 0b1} input - A single bit
- * @returns {0b0 | 0b1}
+ * @param {bit} input - A single bit
+ * @returns {bit}
  */
 export function notGate(input = 0b0) {
 	return input ? 0b0 : 0b1;

@@ -1,4 +1,4 @@
-import { AndOrLatch } from "../and-or";
+import { AndOrLatch } from "..";
 
 describe("Latches - AndOrLatch", () => {
 	test("new latch outputs 0", () => {

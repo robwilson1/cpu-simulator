@@ -1,10 +1,11 @@
+import "../../util/types";
 import { defaultByte } from "../../util/defaults";
 import { orGate, notGate } from "../gates";
 
 /**
  * Given a byte, returns a bit to indicate if the byte is equal to 0
- * @param {0b0 | 0b1[]} input - A single byte
- * @returns {0b0 | 0b1} - a single bit
+ * @param {byte} input - The input byte
+ * @returns {bit}
  */
 export function isZero(input = defaultByte) {
 	const [a0, a1, a2, a3, a4, a5, a6, a7] = input;

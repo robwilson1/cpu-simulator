@@ -1,4 +1,4 @@
-import { GatedLatch } from "../gated";
+import { GatedLatch } from "..";
 
 describe("Latches - GatedLatch", () => {
 	test("new latch outputs 0", () => {

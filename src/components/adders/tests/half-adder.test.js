@@ -1,6 +1,13 @@
 import { halfAdder } from "..";
 
 describe("Adders - Half Adder", () => {
+	test("default to output { sum: 0, carry: 0 }", () => {
+		expect(halfAdder()).toStrictEqual({
+			sum: 0b0,
+			carry: 0b0,
+		});
+	});
+
 	test("0 0 to output { sum: 0, carry: 0 }", () => {
 		expect(halfAdder(0b0, 0b0)).toStrictEqual({
 			sum: 0b0,

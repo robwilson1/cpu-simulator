@@ -1,6 +1,13 @@
 import { fullAdder } from "..";
 
 describe("Adders - Full Adder", () => {
+	test("default to output { sum: 0, carry: 0 }", () => {
+		expect(fullAdder()).toStrictEqual({
+			sum: 0b0,
+			carry: 0b0,
+		});
+	});
+
 	test("0 0 0 to output { sum: 0, carry: 0 }", () => {
 		expect(fullAdder(0b0, 0b0, 0b0)).toStrictEqual({
 			sum: 0b0,

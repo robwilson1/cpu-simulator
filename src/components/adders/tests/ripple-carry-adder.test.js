@@ -2,6 +2,13 @@ import { defaultByte } from "../../../util/defaults";
 import { rippleCarryAdder } from "..";
 
 describe("Adders - Ripple Carry Adder", () => {
+	test("default to output { sum: 00000000, carry: 0 }", () => {
+		expect(rippleCarryAdder()).toStrictEqual({
+			sum: defaultByte,
+			carry: 0b0,
+		});
+	});
+
 	test("00000000 + 00000000 to output { sum: 00000000, carry: 0 }", () => {
 		expect(rippleCarryAdder(defaultByte, defaultByte)).toStrictEqual({
 			sum: defaultByte,

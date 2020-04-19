@@ -6,6 +6,12 @@ describe("Latches - AndOrLatch", () => {
 		expect(latch.output).toBe(0b0);
 	});
 
+	test("default trigger outputs 0", () => {
+		const latch = new AndOrLatch();
+		latch.trigger();
+		expect(latch.output).toBe(0b0);
+	});
+
 	test("Setting input to 1 outputs 1", () => {
 		const latch = new AndOrLatch();
 		latch.trigger(0b1, 0b0);

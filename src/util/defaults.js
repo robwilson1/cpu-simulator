@@ -1,7 +1,7 @@
 import "./types";
 
-/** @type {byte} */
+/** @type {0b0} */
 export const defaultBit = 0b0;
 
-/** @type {byte} */
+/** @type {[0b0, 0b0, 0b0, 0b0, 0b0, 0b0, 0b0, 0b0]} */
 export const defaultByte = [0b0, 0b0, 0b0, 0b0, 0b0, 0b0, 0b0, 0b0];

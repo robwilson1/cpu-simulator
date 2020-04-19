@@ -1,26 +1,16 @@
+import { defaultByte } from "../../util/defaults";
 import { halfAdder } from "./half";
 import { fullAdder } from "./full";
 
-const defaultByte = [
-	0b0,
-	0b0,
-	0b0,
-	0b0,
-	0b0,
-	0b0,
-	0b0,
-	0b0,
-];
-
 /**
- * Add two bytes together
- * @param {number[]} inputA - The first byte
- * @param {number[]} inputB - The second byte
- * @returns {{ sum: number[], carry: number }} - If carry is 1, then overflow occured!
+ * Given 2 bytes, returns the sum and the carry
+ * @param {0b0 | 0b1[]} inputA - The first byte
+ * @param {0b0 | 0b1[]} inputB - The second byte
+ * @returns {{ sum: 0b0 | 0b1[], carry: 0b0 | 0b1 }} - If carry is 1, then overflow occured!
  */
 export function rippleCarryAdder(inputA = defaultByte, inputB = defaultByte) {
-	const [ a0, a1, a2, a3, a4, a5, a6, a7 ] = inputA;
-	const [ b0, b1, b2, b3, b4, b5, b6, b7 ] = inputB;
+	const [a0, a1, a2, a3, a4, a5, a6, a7] = inputA;
+	const [b0, b1, b2, b3, b4, b5, b6, b7] = inputB;
 
 	const result0 = halfAdder(a0, b0);
 	const result1 = fullAdder(result0.carry, a1, b1);
@@ -42,6 +32,6 @@ export function rippleCarryAdder(inputA = defaultByte, inputB = defaultByte) {
 			result6.sum,
 			result7.sum,
 		],
-		carry: result7.carry
+		carry: result7.carry,
 	};
 }

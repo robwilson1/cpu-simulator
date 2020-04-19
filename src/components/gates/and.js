@@ -1,3 +1,3 @@
-export function and(a = 0b0, b = 0b0) {
-	return a & b;
+export function andGate(inputA = 0b0, inputB = 0b0) {
+	return inputA & inputB;
 }

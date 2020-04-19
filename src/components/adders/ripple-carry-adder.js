@@ -10,8 +10,9 @@ import { fullAdder } from "./full-adder";
  * @returns {{ sum: byte, carry: bit }} - If carry is 1, then overflow occured!
  */
 export function rippleCarryAdder(inputA = defaultByte, inputB = defaultByte) {
-	const [a0, a1, a2, a3, a4, a5, a6, a7] = inputA;
-	const [b0, b1, b2, b3, b4, b5, b6, b7] = inputB;
+	// Read the bytes from right to left
+	const [a7, a6, a5, a4, a3, a2, a1, a0] = inputA;
+	const [b7, b6, b5, b4, b3, b2, b1, b0] = inputB;
 
 	const result0 = halfAdder(a0, b0);
 	const result1 = fullAdder(result0.carry, a1, b1);
@@ -24,14 +25,14 @@ export function rippleCarryAdder(inputA = defaultByte, inputB = defaultByte) {
 
 	return {
 		sum: [
-			result0.sum,
-			result1.sum,
-			result2.sum,
-			result3.sum,
-			result4.sum,
-			result5.sum,
-			result6.sum,
 			result7.sum,
+			result6.sum,
+			result5.sum,
+			result4.sum,
+			result3.sum,
+			result2.sum,
+			result1.sum,
+			result0.sum,
 		],
 		carry: result7.carry,
 	};
